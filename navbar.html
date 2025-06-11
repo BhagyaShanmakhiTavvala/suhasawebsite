@@ -1,89 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suhasa School Website</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhasa School Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <!-- Top Announcement Bar with Marquee -->
-  <div class="announcement-bar">
-    <marquee behavior="scroll" direction="right" scrollamount="10">
-      ADMISSIONS OPEN NOW for 2025-2026
-      <a href="programs.html">'Programs Available'</a>
-    </marquee>
-  </div>
-
-  <!-------------- Navbar ------------->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="img/logo.jpg" alt="Suhasa School" />
+    <!-- Top Announcement Bar with Marquee -->
+    <div class="announcement-bar">
+        <marquee behavior="scroll" direction="right" scrollamount="10">
+            ADMISSIONS OPEN NOW for 2025-2026
+            <a href="programs.html">'Programs Available'</a>
+        </marquee>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">About &#x25BE;</a>
-        <ul class="dropdown-menu">
-          <li><a href="ourstory.html">OurStory</a></li>
-          <li><a href="knowmore.html">KnowMore</a></li>
+
+    <!-------------- Navbar ------------->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Suhasa School">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">About &#x25BE;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="ourstory.html">OurStory</a></li>
+                    <li><a href="knowmore.html">KnowMore</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="programs.html">All Programs</a>
+            </li>
+            <li class="dropdown">
+                <a href="workshop.html">Workshops</a>  
+            </li>
+            <li>
+                <a href="whyus.html">Suhasa</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Social &#x25BE;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://www.facebook.com/share/17yaEL7fqz/?mibextid=wwXIfr">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/suhasaearly.learning?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
+                    <li><a href="#">Whatsapp</a></li>                
+                    <li><a href="https://maps.app.goo.gl/PTneu3hpB7hNju5o7?g_st=com.google.maps.preview.copy">GoogleMaps</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="contactus.html">Contact Us</a>
+            </li>
         </ul>
-      </li>
-      <li><a href="programs.html">All Programs</a></li>
-      <li><a href="workshop.html">Workshops</a></li>
-      <li><a href="whyus.html">Suhasa</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Social &#x25BE;</a>
-        <ul class="dropdown-menu">
-          <li><a href="https://www.facebook.com/share/17yaEL7fqz/?mibextid=wwXIfr">Facebook</a></li>
-          <li><a href="https://www.instagram.com/suhasaearly.learning?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
-          <li><a href="#">Whatsapp</a></li>
-          <li><a href="https://maps.app.goo.gl/PTneu3hpB7hNju5o7?g_st=com.google.maps.preview.copy">GoogleMaps</a></li>
-        </ul>
-      </li>
-      <li><a href="contactus.html">Contact Us</a></li>
-    </ul>
-    <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
-  </nav>
+        <!-- Mobile Menu Button -->
+        <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+    </nav>
 
-  <script>
-    // Mobile menu and dropdown toggling
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    <script>
+        // Toggle Menu for Mobile View
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-      // Toggle menu visibility
-      menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation();  // Prevent interference from document click
-        navLinks.classList.toggle('active');
-      });
-
-      // Click outside to close menu
-      document.addEventListener('click', (e) => {
-        if (navLinks.classList.contains('active') &&
-            !navLinks.contains(e.target) &&
-            !menuToggle.contains(e.target)) {
-          navLinks.classList.remove('active');
-        }
-      });
-
-      // Dropdown toggles
-      dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-          e.preventDefault();
-          const dropdown = toggle.parentElement;
-          dropdown.classList.toggle('active');
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-      });
-    });
-  </script>
+
+        // Close menu when clicking outside or on close button
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active')) {
+                // Check if click is on close button (×)
+                if (e.target === navLinks && e.offsetX > navLinks.offsetWidth - 60 && e.offsetY < 60) {
+                    navLinks.classList.remove('active');
+                }
+                // Close if clicking outside the menu and toggle button
+                else if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
+        // Mobile dropdown functionality
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.parentElement;
+                
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown.active').forEach(activeDropdown => {
+                    if (activeDropdown !== dropdown) {
+                        activeDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Fixed logo selector and zoom effect
+        const logoImg = document.querySelector('.logo img');
+        if (logoImg) {
+            let scale = 1;
+            let growing = true;
+            setInterval(() => {
+                if (growing) {
+                    scale += 0.02;
+                    if (scale >= 1.1) growing = false;
+                } else {
+                    scale -= 0.02;
+                    if (scale <= 1) growing = true;
+                }
+                logoImg.style.transform = `scale(${scale})`;
+            }, 100);
+        }
+    </script>
 </body>
 </html>
