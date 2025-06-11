@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +8,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <!-- Top Announcement Bar with Marquee -->
     <div class="announcement-bar">
-      <marquee behavior="scroll" direction="right" scrollamount="20">
+      <marquee behavior="scroll" direction="right" scrollamount="10">
           ADMISSIONS OPEN NOW for 2025-2026
           <a href="programs.html">'Programs Available'</a>
       </marquee>
   </div>
-
     <!-------------- Navbar ------------->
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.jpg" alt="Suhasa School">
+            <img src="img/logo.jpg" alt="Suhasa School">
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -60,23 +58,18 @@
               <a href="contactus.html">Contact Us</a>
             </li>
         </ul>
-
         <!-- Mobile Menu Button -->
         <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
     </nav>
-
-
     <script>
         // Toggle Menu for Mobile View
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
         });
-
         // Automatic Zoom In and Out Effect on Logo
-        const logo = document.querySelector('.logo img');
+        const logo = document.querySelector('.img/logo img');
         let scale = 1;
         let growing = true;
-
         setInterval(() => {
             if (growing) {
                 scale += 0.05;
