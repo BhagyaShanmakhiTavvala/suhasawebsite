@@ -1,3 +1,6 @@
+/* Add this at the very top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
 /* General Reset */
 * {
     margin: 0;
@@ -6,7 +9,7 @@
 }
 
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
     font-size: 20px;
@@ -17,12 +20,12 @@ body {
 
 /* Mobile-first approach - base styles for mobile */
 h2 {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
 }
 
 h3 {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
     color: orange;
 }
 
@@ -42,7 +45,7 @@ h3 {
     color: #118a03;
     text-align: center;
     font-weight: bold;
-    font-family: 'Papyrus', cursive;
+    font-family: 'Kalam', 'Papyrus', cursive;
     font-size: 20px;
 }
 
@@ -142,14 +145,14 @@ h3 {
 
 /* Text Styles */
 .entry {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
     font-size: 22px;
     padding: 10;
 }
 
 .paragraph {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
     font-size: 18px;
     padding: 0 10px;
@@ -267,7 +270,7 @@ h3 {
     margin-bottom: 15px;
     line-height: 1.3;
     color: rgb(255 71 115);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Kalam', 'Comic Sans MS', cursive, sans-serif;
 }
 
 .admissions-banner span {
