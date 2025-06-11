@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Know more</title>
 
@@ -37,11 +37,6 @@
             padding: 20px;
         }
 
-        /* Alternate Layout */
-        .section.reverse {
-            flex-direction: row-reverse;
-        }
-
         /* Content Area */
         .content {
             flex: 1;
@@ -68,11 +63,14 @@
 
         .image-container img {
             max-width: 300px;
-            width: 100%;
-            height: auto;
             border-radius: 16px;
             border: 3px solid #f7b977;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Alternate Layout */
+        .section.reverse {
+            flex-direction: row-reverse;
         }
 
         /* Responsive Design */
@@ -88,14 +86,6 @@
 
             .image-container {
                 margin-top: 20px;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .image-container img {
-                width: 80%;  /* Ensures all images are uniform on small screens */
-                max-width: 300px;
-                height: auto;
             }
         }
     </style>
@@ -135,7 +125,7 @@
             </p>
         </div>
         <div class="image-container">
-            <img src="img/image1.png" alt="Learning Space">
+            <img src="image1.png" alt="Learning Space">
         </div>
     </div>
 
@@ -146,9 +136,6 @@
             <p>
                 Through exciting, innovative techniques and best learning practices, we strive to develop a love for learning, understand the importance of nature and sustainability, think creatively, and create a sense of compassion towards all living beings. Our programs emphasize social and emotional well-being.
             </p>
-        </div>
-        <div class="image-container">
-            <img src="img/image2.png" alt="Child Development">
         </div>
     </div>
 
@@ -161,10 +148,12 @@
             </p>
         </div>
         <div class="image-container">
-            <img src="img/image3.jpg" alt="Diversity and Awareness">
+            <img src="image3.jpg" alt="Diversity and Awareness">
         </div>
     </div>
 
 </body>
+
+</html>
 
 </html>
