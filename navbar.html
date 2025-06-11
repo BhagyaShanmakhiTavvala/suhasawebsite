@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suhasa School Website</title>
+    <title>suhasa School Website</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <!-- Top Announcement Bar with Marquee -->
     <div class="announcement-bar">
-        <marquee behavior="scroll" direction="right" scrollamount="10">
-            ADMISSIONS OPEN NOW for 2025-2026
-            <a href="programs.html">'Programs Available'</a>
-        </marquee>
-    </div>
+      <marquee behavior="scroll" direction="right" scrollamount="20">
+          ADMISSIONS OPEN NOW for 2025-2026
+          <a href="programs.html">'Programs Available'</a>
+      </marquee>
+  </div>
 
     <!-------------- Navbar ------------->
     <nav class="navbar">
         <div class="logo">
-            <img src="img/logo.jpg" alt="Suhasa School">
+            <img src="logo.jpg" alt="Suhasa School">
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle">About &#x25BE;</a>
+                <a href="">About &#x25BE;</a>
                 <ul class="dropdown-menu">
                     <li><a href="ourstory.html">OurStory</a></li>
-                    <li><a href="knowmore.html">KnowMore</a></li>
+                    <li><a href="knowmore.html">KnowMore </a></li>
+                    
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="programs.html">All Programs</a>
+                
             </li>
-            <li class="dropdown">
-                <a href="workshop.html">Workshops</a>  
-            </li>
-            <li>
-                <a href="whyus.html">Suhasa</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Social &#x25BE;</a>
+           
+             
+                <li class="dropdown">
+                    <a href="workshop.html">Workshops</a>  
+                   
+          </li>
+          <li>
+            <a href="whyus.html">Suhasa</a>
+          </li>
+        
+          <li class="dropdown">
+                <a href="#">Social &#x25BE;</a>
                 <ul class="dropdown-menu">
                     <li><a href="https://www.facebook.com/share/17yaEL7fqz/?mibextid=wwXIfr">Facebook</a></li>
                     <li><a href="https://www.instagram.com/suhasaearly.learning?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
@@ -48,72 +57,34 @@
                 </ul>
             </li>
             <li>
-                <a href="contactus.html">Contact Us</a>
+              <a href="contactus.html">Contact Us</a>
             </li>
         </ul>
+
         <!-- Mobile Menu Button -->
         <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
     </nav>
 
+
     <script>
         // Toggle Menu for Mobile View
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-        // Mobile menu toggle
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Close menu when clicking outside or on close button
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active')) {
-                // Check if click is on close button (×)
-                if (e.target === navLinks && e.offsetX > navLinks.offsetWidth - 60 && e.offsetY < 60) {
-                    navLinks.classList.remove('active');
-                }
-                // Close if clicking outside the menu and toggle button
-                else if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                }
+        // Automatic Zoom In and Out Effect on Logo
+        const logo = document.querySelector('.logo img');
+        let scale = 1;
+        let growing = true;
+
+        setInterval(() => {
+            if (growing) {
+                scale += 0.05;
+                if (scale >= 1.3) growing = false;
+            } else {
+                scale -= 0.05;
+                if (scale <= 1) growing = true;
             }
-        });
-
-        // Mobile dropdown functionality
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                const dropdown = toggle.parentElement;
-                
-                // Close other dropdowns
-                document.querySelectorAll('.dropdown.active').forEach(activeDropdown => {
-                    if (activeDropdown !== dropdown) {
-                        activeDropdown.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current dropdown
-                dropdown.classList.toggle('active');
-            });
-        });
-
-        // Fixed logo selector and zoom effect
-        const logoImg = document.querySelector('.logo img');
-        if (logoImg) {
-            let scale = 1;
-            let growing = true;
-            setInterval(() => {
-                if (growing) {
-                    scale += 0.02;
-                    if (scale >= 1.1) growing = false;
-                } else {
-                    scale -= 0.02;
-                    if (scale <= 1) growing = true;
-                }
-                logoImg.style.transform = `scale(${scale})`;
-            }, 100);
-        }
+            logo.style.transform = `scale(${scale})`;
+        }, 100);
     </script>
-</body>
-</html>
