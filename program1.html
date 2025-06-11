@@ -1,100 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todler program</title>
-
+    <title>Toddler Program</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
+            padding-top: 100px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffffff 50%, #f3e5f5 100%);
             color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-
+        
         /* Navbar container */
         #navbar-container {
-           
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000; /* Ensure navbar stays on top */
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
-        /* Main Content Container */
+        
+        /* Main Content Container - Mobile First */
         .container {
+            width: 95%;
             max-width: 800px;
-            padding: 40px;
-            border: 5px solid #fdd835; /* Border added */
-            border-radius: 15px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 120px auto 40px;
+            margin-top: 10px;
+            padding: 20px;
+            border: 4px solid #fdd835;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             text-align: center;
-            
-            /* Push content down to avoid overlapping the navbar */
-            margin: 150px auto; /* Centered horizontally and adjusted vertically */
+            backdrop-filter: blur(10px);
         }
-
+        
         h1 {
-            font-size: 36px;
-            line-height: 1.2;
+            font-size: 24px;
+            line-height: 1.3;
             text-transform: uppercase;
             margin-bottom: 20px;
+            font-weight: bold;
         }
-
+        
         .highlight {
-            background: #fdd835;
+            background: linear-gradient(45deg, #FFD700, #FFA500);;
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(253, 216, 53, 0.3);
+        }
+        
+        .content-section {
+            margin: 30px 0;
+        }
+        
+        .program-list {
+            text-align: left;
+            margin: 20px 0;
             padding: 0 10px;
         }
-        .footer {
-    background-color: #FFD700;
-    text-align: center;
-    padding: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    border-radius: 8px;
-}
-
-.footer span:nth-child(1) {
-    color: #B22222;
-}
-.footer span:nth-child(3) {
-    color: #1E90FF;
-}
-
-
-        p {
-            font-size: 18px;
-            text-align: left;
-            margin-top: 20px;
+        
+        .program-list ul {
+            list-style: none;
+            padding: 0;
         }
-
+        
+        .program-list li {
+            background: linear-gradient(90deg, #e3f2fd, #f8f9fa);
+            margin: 8px 0;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .program-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .program-list li::before {
+            content: "🌟";
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        
         .header-image {
-            width: 300px;
-            margin-top: 30px;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
-       
-.brush-text {
-    font-size: 40px;
-    font-weight: bold;
-    color: black;
-    background: url('brushstroke.png') no-repeat center;
-    background-size: 60%;
-    padding: 20px 40px;
-    display: inline-block;
-    text-align: center;
-    position: relative;
-}
-
+        
+        .header-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .brush-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726, #66bb6a);
+            padding: 15px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            text-align: center;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            animation: gentle-bounce 3s ease-in-out infinite;
+        }
+        
+        @keyframes gentle-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        
+        /* Age badge */
+        .age-badge {
+            background: linear-gradient(45deg, #e91e63, #f06292);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 480px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .program-list li {
+                font-size: 17px;
+                padding: 15px 20px;
+            }
+            
+            .brush-text {
+                font-size: 26px;
+                padding: 18px 30px;
+            }
+            
+            .header-image {
+                max-width: 250px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                margin: 140px auto 60px;
+                padding: 40px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .program-list {
+                padding: 0 20px;
+            }
+            
+            .program-list li {
+                font-size: 18px;
+                padding: 16px 25px;
+            }
+            
+            .brush-text {
+                font-size: 30px;
+                padding: 20px 40px;
+            }
+            
+            .header-image {
+                max-width: 250px;
+            }
+            
+            .footer {
+                font-size: 20px;
+                padding: 25px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                margin: 160px auto 80px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .brush-text {
+                font-size: 34px;
+            }
+        }
+        
+        /* Touch-friendly improvements for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .program-list li:hover {
+                transform: none;
+            }
+            
+            .header-image:hover {
+                transform: none;
+            }
+        }
+        
+        /* Loading animation */
+        .container {
+            animation: fade-in 0.8s ease-out;
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
-
     <script>
         // Load navbar dynamically
         document.addEventListener("DOMContentLoaded", () => {
@@ -106,37 +260,40 @@
                 .catch(error => console.error('Error loading navbar:', error));
         });
     </script>
-
 </head>
-
 <body>
-
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
-
+    
     <!-- Main Content -->
     <div class="container">
+        <div class="age-badge">Ages 18 months - 3 years</div>
         <h1><span class="highlight">Toddler Program/Pre-K1</span></h1>
-
-        <p>
-            Developing safe and healthy habits
-            Fostering positive self-esteem
-            Providing opportunities for creative expression
-            Supporting the development of social skills
-            Stimulating cognitive problem-solving
-            Strengthening listening, reading, writing, and speaking skills
-            Enhancing fine motor and gross motor skills
-            Assessing the individual needs
-        </p>
-
-        <img src="img/boygirl.jpg" alt="Kids holding hands in a circle" class="header-image">
+        
+        <div class="content-section">
+            <div class="program-list">
+                <ul>
+                    <li>Developing safe and healthy habits</li>
+                    <li>Fostering positive self-esteem</li>
+                    <li>Providing opportunities for creative expression</li>
+                    <li>Supporting the development of social skills</li>
+                    <li>Stimulating cognitive problem-solving</li>
+                    <li>Strengthening listening, reading, writing, and speaking skills</li>
+                    <li>Enhancing fine motor and gross motor skills</li>
+                    <li>Assessing individual learning needs</li>
+                </ul>
+            </div>
+            
+            <img src="img/boygirl.jpg" alt="Kids holding hands in a circle" class="header-image"></br>
+            
+            <div class="brush-text">
+                Learn • Play • Create
+            </div>
+        </div>
     </div>
-    <body>
-    <div class="brush-text">
-        Learn • Play • Create
-    </div>
-    </body>
+    
+    <div class="footer">
 
+    </div>
 </body>
-
 </html>
